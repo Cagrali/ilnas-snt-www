@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Impact | ILNAS-SnT Research Programme</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="hero-small"
+        style="background: var(--dark); padding: 160px 0 80px; color: white; text-align: center; position: relative; overflow: hidden;">
+        <div class="main-container" style="position: relative; z-index: 2;">
+            <h1
+                style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; background: linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                News & Impact
+            </h1>
+            <p style="opacity: 0.8; max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+                Disseminating research excellence and standardisation strategic insights to the global community.
+            </p>
+        </div>
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); opacity: 0.7;">
+        </div>
+    </header>
+
+    <main class="main-container" style="padding: 80px 0;">
+
+        <section class="featured-impact" style="margin-bottom: 4rem;">
+            <div
+                style="display: grid; grid-template-columns: 1fr 1fr; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-top: 6px solid var(--secondary);">
+                <div style="padding: 4rem;">
+                    <span class="section-label" style="color: var(--secondary);">Top Highlight</span>
+                    <h2 style="font-size: 2.2rem; margin: 1rem 0;">World Standards Day 2024</h2>
+                    <p style="margin-bottom: 2rem; color: #4b5563;">Celebrating the pivotal role of international
+                        standards in the digital transition.</p>
+                    <a href="news/wsd-2024.html" class="read-more">Read Full Report →</a>
+                </div>
+                <div style="background: url('public/wsd-photo.jpg') center/cover no-repeat; min-height: 300px;">
+                </div>
+            </div>
+        </section>
+
+        <h3 class="section-label" style="margin-bottom: 2rem;">Recent Major Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 6rem;">
+
+            <div
+                style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                <div style="height: 200px; background: url('public/event-photo-1.jpg') center/cover;"></div>
+                <div style="padding: 2rem;">
+                    <span style="font-size: 0.8rem; font-weight: 800; color: var(--primary);">MAY 2024</span>
+                    <h4 style="margin: 0.5rem 0;">SnT Partnership Day</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">Showcasing the ILNAS-SnT collaboration to over 400
+                        industry partners.</p>
+                    <a href="#"
+                        style="color: var(--secondary); text-decoration: none; font-weight: 700; font-size: 0.9rem;">View
+                        Gallery →</a>
+                </div>
+            </div>
+
+            <div
+                style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                <div style="height: 200px; background: url('public/event-photo-2.jpg') center/cover;"></div>
+                <div style="padding: 2rem;">
+                    <span style="font-size: 0.8rem; font-weight: 800; color: var(--primary);">JAN 2024</span>
+                    <h4 style="margin: 0.5rem 0;">Quantum Standards Workshop</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">Technical deep-dive with international experts on QKD
+                        protocols.</p>
+                    <a href="#"
+                        style="color: var(--secondary); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Read
+                        More →</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="archive-section" style="background: #f8fafc; padding: 4rem; border-radius: 20px;">
+            <h3 style="margin-bottom: 2rem; color: var(--dark);">Event Archive</h3>
+
+            <div id="event-list">
+                <div
+                    style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between;">
+                    <div><strong>Standardization of AI (2024)</strong>
+                        <p>Meeting - Brussels</p>
+                    </div>
+                    <span style="font-weight: 700;">2024</span>
+                </div>
+
+                <div id="archive-content" style="display: none;">
+                    <div
+                        style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between;">
+                        <div><strong>Legacy Event A</strong>
+                            <p>Details from 2022...</p>
+                        </div>
+                        <span style="font-weight: 700;">2022</span>
+                    </div>
+                    <div
+                        style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between;">
+                        <div><strong>Legacy Event B</strong>
+                            <p>Details from 2021...</p>
+                        </div>
+                        <span style="font-weight: 700;">2021</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="archive-btn" onclick="toggleArchive()"
+                style="margin-top: 2rem; background: none; border: 2px solid var(--primary); color: var(--primary); padding: 0.8rem 2rem; border-radius: 8px; font-weight: 800; cursor: pointer;">
+                View All Past Events +
+            </button>
+        </section>
+    </main>
+    <nav></nav> 
+    <footer></footer> <script src="navbar.js"></script>
+</body>
+
+</html>

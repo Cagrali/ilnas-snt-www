@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ILNAS-SnT Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-container" style="padding-top: 150px; padding-bottom: 100px;">
+
+        <div class="contact-header" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-label">Contact & Support</span>
+            <h1 style="color: var(--dark); font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem;">Get in Touch</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: #64748b;">Have questions about our research or
+                standardisation activities? Reach out to our team below.</p>
+        </div>
+
+        <div class="contact-layout"
+            style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start;">
+
+            <form action="https://formspree.io/f/xykzqvdn" method="POST" class="modern-form"
+                style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="form-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column;">
+                    <label style="font-weight: 600; margin-bottom: 0.5rem;">Full Name</label>
+                    <input type="text" name="name" required placeholder="John Doe"
+                        style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column;">
+                    <label style="font-weight: 600; margin-bottom: 0.5rem;">Email Address</label>
+                    <input type="email" name="_replyto" required placeholder="email@example.com"
+                        style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem; display: flex; flex-direction: column;">
+                    <label style="font-weight: 600; margin-bottom: 0.5rem;">Message</label>
+                    <textarea name="message" rows="5" placeholder="How can we help you?"
+                        style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit;"></textarea>
+                </div>
+                <button type="submit" class="btn-primary"
+                    style="width: 100%; padding: 1.2rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s;">Send
+                    Message</button>
+            </form>
+
+            <div class="contact-info-sidebar">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; color: var(--dark);">Our Offices</h3>
+
+                <div style="margin-bottom: 2.5rem; padding-left: 1.5rem; border-left: 4px solid var(--secondary);">
+                    <h4
+                        style="color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                        ILNAS Headquarters</h4>
+                    <p style="font-weight: 700; margin-bottom: 0.2rem;">Southlane Tower I</p>
+                    <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 0.8rem;">1, avenue du Swing<br>L-4367
+                        Belvaux</p>
+                    <p style="font-size: 0.95rem;"><strong>Tel:</strong> (+352) 247 743 00</p>
+                </div>
+
+                <div style="padding-left: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4
+                        style="color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                        SnT - University of Luxembourg</h4>
+                    <p style="font-weight: 700; margin-bottom: 0.2rem;">Maison du Nombre</p>
+                    <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 0.8rem;">6, avenue de la
+                        Fonte<br>L-4364 Esch-sur-Alzette</p>
+                    <p style="font-size: 0.95rem;"><strong>Tel:</strong> (+352) 46 66 44 5000</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+
+            <div class="map-card">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--secondary); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        ILNAS Headquarters</h3>
+                    <p style="font-size: 0.9rem; color: #475569;">Southlane Tower I, 1 avenue du Swing, L-4367 Belvaux
+                    </p>
+                </div>
+                <div
+                    style="border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <iframe width="100%" height="100%" frameborder="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=5.9472%2C49.4995%2C5.9525%2C49.5020&layer=mapnik&marker=49.5008%2C5.9498"></iframe>
+                </div>
+            </div>
+
+            <div class="map-card">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">SnT -
+                        Maison du Nombre</h3>
+                    <p style="font-size: 0.9rem; color: #475569;">6, avenue de la Fonte, L-4364 Esch-sur-Alzette</p>
+                </div>
+                <div
+                    style="border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <iframe width="100%" height="100%" frameborder="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=5.9485%2C49.4990%2C5.9515%2C49.5015&layer=mapnik&marker=49.5002%2C5.9502"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav></nav> 
+    <footer></footer> <script src="navbar.js"></script>
+</body>
+
+</html>

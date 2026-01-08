@@ -1,0 +1,465 @@
+/* =========================================
+   1. CORE VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary: #581F7E;
+    --secondary: #0096D7;
+    --accent: #E41E0A;
+    --dark: #0a1929;
+    --white: #ffffff;
+    --gray: #f1f5f9;
+    --nav-offset: 120px;
+    --section-spacing: clamp(4rem, 10vh, 8rem);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-offset);
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background: var(--gray);
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* This removes the extra margin from the very last paragraph in a section */
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    background: rgba(10, 25, 41, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    /* Centered menu */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    /* Clean spacing */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+}
+
+/* =========================================
+   3. HERO & SECTIONS
+   ========================================= */
+section {
+    padding: var(--section-spacing) 0;
+    clear: both;
+}
+
+.hero {
+    min-height: 70vh;
+    padding: 120px 0 60px;
+    background: var(--dark);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    opacity: 0.8;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    /* Restored to left-aligned as per your preference */
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    background: linear-gradient(to right, #fff, var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+/* =========================================
+   FIXED: CONTAINED PARTNER BOX
+   ========================================= */
+.partners-grid-section {
+    background: #f1f5f9; /* Light grey background to make the white box pop */
+    padding: 4rem 0;     /* Space before and after the partners section */
+}
+
+.partner-card-inner {
+    background: #ffffff;
+    padding: 2rem 3rem;  /* Tight padding so the box isn't "huge" */
+    border-radius: 15px; /* Subtle rounded corners per image_5cd705 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Very light shadow */
+    max-width: 1000px;   /* Constrains the box size around the logos */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partner-label {
+    display: block;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.partner-logos img {
+    max-height: 100px;    /* Keeps logos uniform and reasonably sized */
+    width: auto;
+    object-fit: contain;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.synergy-section {
+    border-radius: 12px;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Very light shadow */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.collaboration-goals {
+    text-align: left;
+    font-size: 1.2em;
+}
+/* =========================================
+   4. THE TEAM (THE CIRCLE FIX)
+   ========================================= */
+.team-flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    /* Centers items when zooming out */
+}
+
+.member-card {
+    flex: 0 1 220px;
+    /* Cards stay consistent sizes */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* The Circle Wrapper */
+.circle {
+    position: relative;
+    /* Lock the shape to a perfect square/circle ratio */
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 1.5rem;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    /* MATCH THIS TO YOUR PAGE BACKGROUND */
+    background-color: var(--gray);
+
+    object-fit: cover;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle:hover {
+    transform: scale(1.05);
+}
+
+/* Circle Borders */
+.snt-border {
+    border: 6px solid var(--primary);
+}
+
+.ilnas-border {
+    border: 6px solid var(--secondary);
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' ensures the photo fills the circle edge-to-edge */
+    /* 'contain' is better if you have pre-cut transparent portraits */
+    object-fit: cover;
+    display: block;
+}
+
+/* The Pop-up Bio Overlay */
+.pop-bio {
+    position: absolute;
+    /* REQUIRED: Floats on top of the image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 0.85rem;
+
+    /* Organizational colors with transparency */
+    background: rgba(88, 31, 126, 0.9);
+    /* SnT Purple */
+
+    /* Toggle visibility on hover */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Background colors for Pop-bios based on organization */
+.snt-border .pop-bio {
+    background: rgba(88, 31, 126, 0.9);
+}
+
+.ilnas-border .pop-bio {
+    background: rgba(0, 150, 215, 0.9);
+}
+
+.circle:hover .pop-bio {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Team Typography */
+.name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-top: 10px;
+}
+
+.role {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Bio Paragraph Styling */
+#profile-bio p {
+    margin-bottom: 1.5rem; /* The spacing you like */
+    line-height: 1.8;      /* Keeps the text readable */
+    color: #475569;        /* Your secondary dark gray */
+    text-align: justify;
+}
+
+/* Remove margin from the last paragraph so it doesn't push the section too far down */
+#profile-bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   5. RESEARCH PILLARS & CARDS
+   ========================================= */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.sector-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+
+.sector-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image img,
+.pillar-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 2rem;
+}
+
+
+/* =========================================
+   7. RESPONSIVENESS (ZOOM SUPPORT)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* =========================================
+   7. CONTACT PAGE MAPS
+   ========================================= */
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Wraps to one column for zoom/mobile */
+    gap: 4rem;
+}
+
+.form-section,
+.info-section {
+    flex: 1 1 450px;
+    /* Minimum width before stacking */
+}
+
+.location-card {
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.map-container iframe {
+    filter: grayscale(100%) contrast(1.2) opacity(0.8);
+    /* Modern research look */
+    transition: 0.3s;
+}
+
+.map-container:hover iframe {
+    filter: grayscale(0%);
+}
+
+.modern-form {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Forces label on top of input */
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    color: var(--dark);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* NEWS AND IMPACT */
+.impact-block {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.impact-block:hover {
+    transform: translateY(-5px);
+}
+
+.news-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item h4 {
+    color: var(--dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+}

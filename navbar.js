@@ -1,0 +1,101 @@
+const injectSharedElements = () => {
+    const isSubfolder = window.location.pathname.includes("/sectors/") ||
+    window.location.pathname.includes("/bio/");
+    const pathPrefix = isSubfolder ? "../" : "";
+    const isHomePage = window.location.pathname.endsWith("index.html") || 
+                       window.location.pathname.endsWith("/") || 
+                       window.location.pathname === "";
+
+    const researchLink = isHomePage ? "#sectors" : `${pathPrefix}index.html#sectors`;
+
+    // 1. NAVBAR HTML
+    const navContent = `
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="${pathPrefix}index.html">Home</a></li>
+                <li><a href="${pathPrefix}about.html">About</a></li>
+                <li><a href="${researchLink}">Research</a></li>
+                <li><a href="${pathPrefix}news-and-impact.html">News & Impact</a></li>
+                <li><a href="${pathPrefix}contact.html" class="nav-btn">Contact</a></li>
+            </ul>
+        </div>
+    `;
+
+    // 2. FOOTER HTML
+    const footerContent = `
+    <div class="main-container">
+      <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+        <div class="footer-brand">
+          <h4 style="color: var(--secondary); margin-bottom: 1rem;">ILNAS-SnT Research Programme</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">A high-level partnership between the University of Luxembourg and ILNAS.</p>
+        </div>
+        <div class="footer-links">
+          <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+            <li><a href="${pathPrefix}about.html" style="color: white; opacity: 0.7; text-decoration: none;">About</a></li>
+            <li><a href="${pathPrefix}contact.html" style="color: white; opacity: 0.7; text-decoration: none;">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 style="margin-bottom: 1rem;">Locations</h4>
+          <div style="font-size: 0.85rem; opacity: 0.7;">
+            <p><strong>ILNAS:</strong> Belvaux</p>
+            <p><strong>SnT:</strong> Esch-sur-Alzette</p>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; font-size: 0.85rem; opacity: 0.6;">
+        <p>Copyright © 2026 Université du Luxembourg / ILNAS.</p>
+      </div>
+      
+      <button id="backToTop" title="Go to top" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; border: none; outline: none; background-color: var(--secondary); color: white; cursor: pointer; padding: 15px; border-radius: 50%; width: 50px; height: 50px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: opacity 0.3s;">
+        ↑
+      </button>
+    </div>
+    `;
+
+    // 3. INJECTION
+    const navElement = document.querySelector("nav");
+    if (navElement) navElement.innerHTML = navContent;
+
+    const footerElement = document.querySelector("footer");
+    if (footerElement) {
+        footerElement.innerHTML = footerContent;
+        footerElement.className = "main-footer";
+        footerElement.style.background = "var(--dark)";
+        footerElement.style.color = "white";
+        footerElement.style.padding = "4rem 0 2rem 0";
+    }
+
+    // 4. BACK TO TOP LOGIC
+    const bttButton = document.getElementById("backToTop");
+    
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            bttButton.style.display = "block";
+            bttButton.style.opacity = "1";
+        } else {
+            bttButton.style.opacity = "0";
+            setTimeout(() => { if(bttButton.style.opacity === "0") bttButton.style.display = "none"; }, 300);
+        }
+    };
+
+    bttButton.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+};
+
+// Toggle Archive for News Page
+function toggleArchive() {
+    const archive = document.getElementById("archive-content");
+    const btn = document.getElementById("archive-btn");
+    if (archive.style.display === "none" || archive.style.display === "") {
+        archive.style.display = "block";
+        btn.innerHTML = "Show Less -";
+    } else {
+        archive.style.display = "none";
+        btn.innerHTML = "View All Past Events +";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", injectSharedElements);
