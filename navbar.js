@@ -1,15 +1,15 @@
 const injectSharedElements = () => {
-    const isSubfolder = window.location.pathname.includes("/sectors/") ||
+  const isSubfolder = window.location.pathname.includes("/sectors/") ||
     window.location.pathname.includes("/bio/");
-    const pathPrefix = isSubfolder ? "../" : "";
-    const isHomePage = window.location.pathname.endsWith("index.html") || 
-                       window.location.pathname.endsWith("/") || 
-                       window.location.pathname === "";
+  const pathPrefix = isSubfolder ? "../" : "";
+  const isHomePage = window.location.pathname.endsWith("index.html") ||
+    window.location.pathname.endsWith("/") ||
+    window.location.pathname === "";
 
-    const researchLink = isHomePage ? "#sectors" : `${pathPrefix}index.html#sectors`;
+  const researchLink = isHomePage ? "#sectors" : `${pathPrefix}index.html#sectors`;
 
-    // 1. NAVBAR HTML
-    const navContent = `
+  // 1. NAVBAR HTML
+  const navContent = `
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="${pathPrefix}index.html">Home</a></li>
@@ -21,8 +21,8 @@ const injectSharedElements = () => {
         </div>
     `;
 
-    // 2. FOOTER HTML
-    const footerContent = `
+  // 2. FOOTER HTML
+  const footerContent = `
     <div class="main-container">
       <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
         <div class="footer-brand">
@@ -30,17 +30,31 @@ const injectSharedElements = () => {
           <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">A high-level partnership between the University of Luxembourg and ILNAS.</p>
         </div>
         <div class="footer-links">
-          <h4 style="margin-bottom: 1rem;">Quick Links</h4>
-          <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-            <li><a href="${pathPrefix}about.html" style="color: white; opacity: 0.7; text-decoration: none;">About</a></li>
-            <li><a href="${pathPrefix}contact.html" style="color: white; opacity: 0.7; text-decoration: none;">Contact</a></li>
-          </ul>
-        </div>
+    <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+    <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+        <li style="margin-bottom: 0.5rem;">
+            <a href="https://portail-qualite.public.lu/fr.html" 
+               target="_blank" 
+               rel="noopener" 
+               style="color: white; opacity: 0.7; text-decoration: none;">
+               Portail Qualité
+            </a>
+        </li>
+        <li>
+            <a href="https://www.uni.lu/snt-en/" 
+               target="_blank" 
+               rel="noopener" 
+               style="color: white; opacity: 0.7; text-decoration: none;">
+               SnT - University of Luxembourg
+            </a>
+        </li>
+    </ul>
+</div>
         <div class="footer-contact">
           <h4 style="margin-bottom: 1rem;">Locations</h4>
           <div style="font-size: 0.85rem; opacity: 0.7;">
-            <p><strong>ILNAS:</strong> Belvaux</p>
-            <p><strong>SnT:</strong> Esch-sur-Alzette</p>
+            <p><strong>ILNAS:</strong> Southlane Tower I, 1 avenue du Swing, L-4367 Belvaux</p>
+            <p><strong>SnT:</strong> Maison du Nombre 6, avenue de la Fonte, L-4364 Esch-sur-Alzette</p>
           </div>
         </div>
       </div>
@@ -54,48 +68,48 @@ const injectSharedElements = () => {
     </div>
     `;
 
-    // 3. INJECTION
-    const navElement = document.querySelector("nav");
-    if (navElement) navElement.innerHTML = navContent;
+  // 3. INJECTION
+  const navElement = document.querySelector("nav");
+  if (navElement) navElement.innerHTML = navContent;
 
-    const footerElement = document.querySelector("footer");
-    if (footerElement) {
-        footerElement.innerHTML = footerContent;
-        footerElement.className = "main-footer";
-        footerElement.style.background = "var(--dark)";
-        footerElement.style.color = "white";
-        footerElement.style.padding = "4rem 0 2rem 0";
+  const footerElement = document.querySelector("footer");
+  if (footerElement) {
+    footerElement.innerHTML = footerContent;
+    footerElement.className = "main-footer";
+    footerElement.style.background = "var(--dark)";
+    footerElement.style.color = "white";
+    footerElement.style.padding = "4rem 0 2rem 0";
+  }
+
+  // 4. BACK TO TOP LOGIC
+  const bttButton = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      bttButton.style.display = "block";
+      bttButton.style.opacity = "1";
+    } else {
+      bttButton.style.opacity = "0";
+      setTimeout(() => { if (bttButton.style.opacity === "0") bttButton.style.display = "none"; }, 300);
     }
+  };
 
-    // 4. BACK TO TOP LOGIC
-    const bttButton = document.getElementById("backToTop");
-    
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            bttButton.style.display = "block";
-            bttButton.style.opacity = "1";
-        } else {
-            bttButton.style.opacity = "0";
-            setTimeout(() => { if(bttButton.style.opacity === "0") bttButton.style.display = "none"; }, 300);
-        }
-    };
-
-    bttButton.onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
+  bttButton.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 };
 
 // Toggle Archive for News Page
 function toggleArchive() {
-    const archive = document.getElementById("archive-content");
-    const btn = document.getElementById("archive-btn");
-    if (archive.style.display === "none" || archive.style.display === "") {
-        archive.style.display = "block";
-        btn.innerHTML = "Show Less -";
-    } else {
-        archive.style.display = "none";
-        btn.innerHTML = "View All Past Events +";
-    }
+  const archive = document.getElementById("archive-content");
+  const btn = document.getElementById("archive-btn");
+  if (archive.style.display === "none" || archive.style.display === "") {
+    archive.style.display = "block";
+    btn.innerHTML = "Show Less -";
+  } else {
+    archive.style.display = "none";
+    btn.innerHTML = "View All Past Events +";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", injectSharedElements);
