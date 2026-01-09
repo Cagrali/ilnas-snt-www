@@ -463,3 +463,12 @@ section {
     font-size: 1.1rem;
     line-height: 1.3;
 }
+
+/* =========================================
+   7. STATS
+   ========================================= */
+
+.stats-section div:hover div {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}

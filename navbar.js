@@ -1,3 +1,15 @@
+// --- Google Analytics Setup ---
+// Paste your actual snippet here
+const script = document.createElement('script');
+script.async = true;
+script.src = 'https://www.googletagmanager.com/gtag/js?id=G-906KF8ERHN'; // Replace with your ID
+document.head.appendChild(script);
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-906KF8ERHN'); // Replace with your ID
+
 const injectSharedElements = () => {
   const isSubfolder = window.location.pathname.includes("/sectors/") ||
     window.location.pathname.includes("/bio/");
