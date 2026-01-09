@@ -27,6 +27,7 @@ const injectSharedElements = () => {
                 <li><a href="${pathPrefix}index.html">Home</a></li>
                 <li><a href="${pathPrefix}about.html">About</a></li>
                 <li><a href="${researchLink}">Research</a></li>
+                <li><a href="${pathPrefix}research-team.html">Team</a></li>
                 <li><a href="${pathPrefix}news-and-impact.html">News & Impact</a></li>
                 <li><a href="${pathPrefix}contact.html" class="nav-btn">Contact</a></li>
             </ul>
