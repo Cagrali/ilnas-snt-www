@@ -21,18 +21,68 @@ const injectSharedElements = () => {
   const researchLink = isHomePage ? "#sectors" : `${pathPrefix}index.html#sectors`;
 
   // 1. NAVBAR HTML
-  const navContent = `
+const navContent = `
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="${pathPrefix}index.html">Home</a></li>
+            <li><a href="${pathPrefix}about.html">About</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Research Pillars <span class="chevron">▾</span></a>
+                <ul class="dropdown-content">
+                    <li><a href="${pathPrefix}sectors/ict.html">ICT & Quantum</a></li>
+                    <li><a href="${pathPrefix}sectors/aerospace.html">Aerospace</a></li>
+                    <li><a href="${pathPrefix}sectors/construction.html">Construction</a></li>
+                </ul>
+            </li>
+
+            <li><a href="${pathPrefix}research-team.html">Team</a></li>
+            <li><a href="${pathPrefix}news-and-impact.html">News & Impact</a></li>
+            <li><a href="${pathPrefix}contact.html" class="nav-btn">Contact</a></li>
+        </ul>
+    </div>
+`;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navContainer = document.querySelector("nav");
+    const isSubpage = window.location.pathname.includes('/sectors/');
+    const pathPrefix = isSubpage ? '../' : './';
+
+    navContainer.innerHTML = `
         <div class="nav-container">
+            <a href="${pathPrefix}index.html" class="logo">ILNAS-SnT Hub</a>
+            
+            <button class="mobile-nav-toggle">
+                <span class="hamburger"></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="${pathPrefix}index.html">Home</a></li>
                 <li><a href="${pathPrefix}about.html">About</a></li>
-                <li><a href="${researchLink}">Research</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Research Pillars <span class="chevron">▾</span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="${pathPrefix}sectors/ict.html">ICT & Quantum</a></li>
+                        <li><a href="${pathPrefix}sectors/aerospace.html">Aerospace & Satellite</a></li>
+                        <li><a href="${pathPrefix}sectors/construction.html">Construction & BIM</a></li>
+                    </ul>
+                </li>
                 <li><a href="${pathPrefix}research-team.html">Team</a></li>
                 <li><a href="${pathPrefix}news-and-impact.html">News & Impact</a></li>
                 <li><a href="${pathPrefix}contact.html" class="nav-btn">Contact</a></li>
             </ul>
         </div>
     `;
+    
+    // Mobile logic
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if(toggle) {
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+    }
+});
 
   // 2. FOOTER HTML
   const footerContent = `
@@ -126,3 +176,31 @@ function toggleArchive() {
 }
 
 document.addEventListener("DOMContentLoaded", injectSharedElements);
+
+// Dynamism: Reveal elements on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+// Apply to any element you want to animate
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.reveal-on-scroll, .member-card, .strategy-intro').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        revealObserver.observe(el);
+    });
+});
+
+// Function to handle Navbar visibility on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    // Change '100' to the height you want (e.g., window.innerHeight * 0.5)
+    if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});

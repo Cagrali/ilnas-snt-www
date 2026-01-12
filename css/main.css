@@ -52,17 +52,29 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 0;
-    background: rgba(10, 25, 41, 0.85);
-    backdrop-filter: blur(15px);
+    padding: 1.0rem 0; /* Slightly slimmer padding for a professional look */
+    background: var(--dark); /* Start with the dark background immediately */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    /* opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    background: var(--dark);  */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 0;
+}
+
+nav.scrolled .nav-links a {
+    color: white !important;
 }
 
 .nav-container {
     display: flex;
     justify-content: center;
-    /* Centered menu */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -71,7 +83,6 @@ nav {
     list-style: none;
     display: flex;
     gap: 3rem;
-    /* Clean spacing */
 }
 
 .nav-links a {
@@ -84,6 +95,71 @@ nav {
 .nav-links a:hover {
     opacity: 1;
     color: var(--secondary);
+}
+
+/* --- Dropdown visibility & Persistence fix --- */
+
+/* --- Cohesive Dark Dropdown Style --- */
+
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Matches your navbar background and border */
+    background: var(--dark); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 10001;
+}
+
+/* THE INVISIBLE BRIDGE: Bridges the hover gap */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -20px; 
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+/* Match navbar text color (White) */
+.dropdown-content li a {
+    color: var(--white) !important;
+    opacity: 0.8;
+    padding: 12px 20px;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Hover persistence logic */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Link Hover inside the dropdown */
+.dropdown-content li a:hover {
+    opacity: 1;
+    color: var(--secondary) !important;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* =========================================
@@ -117,7 +193,13 @@ section {
     position: relative;
     z-index: 2;
     text-align: left;
+    transition-delay: 0.2s;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.2);
     /* Restored to left-aligned as per your preference */
+}
+
+.hero-content p {
+    transition-delay: 0.4s;
 }
 
 .hero h1 {
@@ -128,6 +210,39 @@ section {
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.1;
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Staggered Entrance for the Hero Elements */
+
+/* The badge appears immediately */
+.hero-content .badge.active {
+    transition-delay: 0.1s;
+}
+
+/* The H1 waits 0.3 seconds */
+.hero-content h1.active {
+    transition-delay: 0.3s;
+}
+
+/* The Paragraph waits 0.5 seconds */
+.hero-content p.active {
+    transition-delay: 0.5s;
+}
+
+/* Optional: Make the Hero reveal specifically slide up from further down */
+.hero-content .reveal-on-scroll {
+    transform: translateY(40px);
+    filter: blur(5px); /* Adds a professional soft entry */
+}
+
+.hero-content .reveal-on-scroll.active {
+    transform: translateY(0);
+    filter: blur(0);
 }
 
 /* =========================================
@@ -182,6 +297,19 @@ section {
     text-align: center;
 }
 
+/* 3. Animate the SVG colors on hover */
+.synergy-visual svg rect {
+    transition: fill 0.3s ease;
+}
+
+.synergy-visual svg:hover rect {
+    filter: brightness(1.1);
+}
+
+.synergy-visual.reveal-on-scroll {
+    transition-delay: 0.7s;
+}
+
 .collaboration-goals {
     text-align: left;
     font-size: 1.2em;
@@ -205,23 +333,22 @@ section {
 }
 
 /* The Circle Wrapper */
+
 .circle {
     position: relative;
-    /* Lock the shape to a perfect square/circle ratio */
     width: 180px;
-    aspect-ratio: 1 / 1;
+    height: 180px; /* Use height instead of aspect-ratio for older browser support */
     margin: 0 auto 1.5rem;
-
     border-radius: 50%;
-    overflow: hidden;
+    overflow: hidden; /* This crops the pop-bio into a circle */
+    z-index: 1; /* Creates a new stacking context */
+}
 
-    /* MATCH THIS TO YOUR PAGE BACKGROUND */
-    background-color: var(--gray);
-
-    object-fit: cover;
+.circle a {
     display: block;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 .circle:hover {
@@ -240,36 +367,35 @@ section {
 .circle img {
     width: 100%;
     height: 100%;
-    /* 'cover' ensures the photo fills the circle edge-to-edge */
-    /* 'contain' is better if you have pre-cut transparent portraits */
     object-fit: cover;
     display: block;
 }
 
+
 /* The Pop-up Bio Overlay */
 .pop-bio {
     position: absolute;
-    /* REQUIRED: Floats on top of the image */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    
+    /* Centering the text */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    padding: 1.5rem;
+    
     color: white;
     font-size: 0.85rem;
-
-    /* Organizational colors with transparency */
-    background: rgba(88, 31, 126, 0.9);
-    /* SnT Purple */
-
-    /* Toggle visibility on hover */
+    font-weight: 500;
+    line-height: 1.4;
+    
+    /* Animation settings */
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
 }
 
 /* Background colors for Pop-bios based on organization */
@@ -284,6 +410,10 @@ section {
 .circle:hover .pop-bio {
     opacity: 1;
     visibility: visible;
+}
+
+.circle:hover img {
+    transform: scale(1.1);
 }
 
 /* Team Typography */
@@ -328,11 +458,27 @@ section {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.sector-card:hover {
+/* Using more specificity to win the "priority war" */
+section#sectors .sector-grid .sector-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--secondary);
+}
+
+/* Subtle zoom effect on the image inside */
+.sector-card:hover .pillar-image img {
+    transform: scale(1.05);
+}
+
+.sector-card:hover .read-more {
+    color: var(--secondary);
+    padding-left: 5px; /* Slight push to the right */
 }
 
 .card-image img,
@@ -340,10 +486,16 @@ section {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .card-text {
     padding: 2rem;
+}
+
+.pillar-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1) !important;
 }
 
 
@@ -471,4 +623,26 @@ section {
 .stats-section div:hover div {
     transform: scale(1.1);
     transition: 0.3s ease;
+}
+
+
+/* =========================================
+   7. DYNAMISM
+   ========================================= */
+
+/* Smooth Scroll for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Dynamism: Reveal Animation */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
 }
