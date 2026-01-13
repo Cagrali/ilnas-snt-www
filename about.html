@@ -7,134 +7,224 @@
     <title>About the Programme | ILNAS-SnT Hub</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Tightening the global spacing */
+        .section-padding {
+            padding: 40px 0;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-3px);
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
 </head>
 
 <body class="about-page">
     <header class="hero-small"
-        style="background: var(--dark); padding: 160px 0 80px; color: white; text-align: center;">
+        style="background: var(--dark); padding: 100px 0 50px; color: white; text-align: center;">
         <div class="main-container">
-            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Mission & Vision</h1>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800;">Mission & Vision</h1>
             <p style="opacity: 0.8; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-                Advancing Luxembourg’s interests through the intersection of academic research and global standardization.
+                Advancing Luxembourg’s interests through the intersection of academic research and global
+                standardization.
             </p>
         </div>
     </header>
 
-    <main class="main-container" style="padding: 80px 0;">
+    <main>
+        <section class="section-padding">
+            <div class="main-container">
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: start;">
+                    <div>
+                        <h2
+                            style="color: var(--secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">
+                            The Programme</h2>
+                        <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2;">What is the ILNAS-SnT
+                            Synergy?</h3>
 
-        <section class="mission-section" style="margin-bottom: 6rem;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-                <div>
-                    <h2 class="section-label">The Programme</h2>
-                    <h3 style="font-size: 2.2rem; margin: 1rem 0;">What is the ILNAS-SnT Synergy?</h3>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.8; color: #475569;">
-                        Launched in 2017 and now in its <strong>third consecutive phase (2025-2028)</strong>, this partnership creates a unique bridge between the Interdisciplinary Centre for Security, Reliability and Trust (SnT) and the Luxembourgish Institute of Standardisation, Accreditation, Safety and Quality of Products and Services (ILNAS).
+                        <p style="margin-bottom: 1.2rem; line-height: 1.7; color: #475569;">
+                            Launched in 2017 and now in its <strong>third consecutive phase (2025-2028)</strong>, this
+                            partnership creates a unique bridge between the Interdisciplinary Centre for Security,
+                            Reliability and Trust (SnT) and the Luxembourgish Institute of Standardisation,
+                            Accreditation, Safety and Quality of Products and Services (ILNAS).
+                        </p>
+                        <p style="margin-bottom: 1.2rem; line-height: 1.7; color: #475569;">
+                            The programme integrates PhD researchers directly into international technical committees
+                            <strong>(ISO/IEC/CEN/CENELEC)</strong>. This ensures that scientific breakthroughs aren't
+                            just published in journals, but are used to shape the technical standards that govern our
+                            global digital economy.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div
+                            style="background: #f8fafc; padding: 2rem; border-radius: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-around; text-align: center;">
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary);">8+</div>
+                                <p style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Years</p>
+                            </div>
+                            <div style="border-left: 1px solid #e2e8f0;"></div>
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary);">150+</div>
+                                <p style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Pubs</p>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--primary); color: white; padding: 2rem; border-radius: 20px;">
+                            <h4 style="margin-bottom: 1rem; font-size: 1.1rem;">Why Standardization?</h4>
+                            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                                <li style="margin-bottom: 0.8rem;">✔ <strong>Interoperability:</strong> Seamless tech
+                                    integration.</li>
+                                <li style="margin-bottom: 0.8rem;">✔ <strong>Market Access:</strong> Global scaling for
+                                    LU companies.</li>
+                                <li>✔ <strong>Sovereignty:</strong> A voice in global digital rules.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategic-focus-wrapper">
+            <div class="main-container">
+
+                <div class="focus-header">
+                    <h2>2025-2028 Strategic Focus</h2>
+                    <h3>The Sustainability Umbrella</h3>
+                </div>
+
+                <div class="sustainability-card">
+                    <p>
+                        In its third phase, the programme aligns three critical pillars under a unified sustainability
+                        framework.
+                        By integrating environmental goals directly into technical standards, we ensure that the digital
+                        and physical transitions of Luxembourg’s economy are both resilient and green.
                     </p>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.8; color: #475569;">
-                        The programme integrates PhD researchers directly into international technical committees (ISO/IEC/CEN/CENELEC). This ensures that scientific breakthroughs aren't just published in journals, but are used to shape the <strong>technical standards</strong> that govern our global digital economy.
-                    </p>
                 </div>
-                <div style="background: #f8fafc; padding: 3rem; border-radius: 20px; border: 1px solid #e2e8f0;">
-                    <h4 style="color: var(--primary); margin-bottom: 1.5rem;">Why Standardization?</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Standardization is the "silent engine" of innovation. It ensures:</p>
-                    <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
-                        <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
-                            <span style="color: var(--secondary);">✔</span> 
-                            <span><strong>Interoperability:</strong> Ensuring different technologies work together seamlessly.</span>
-                        </li>
-                        <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
-                            <span style="color: var(--secondary);">✔</span> 
-                            <span><strong>Market Access:</strong> Helping Luxembourgish companies enter global markets through compliant products.</span>
-                        </li>
-                        <li style="display: flex; gap: 1rem;">
-                            <span style="color: var(--secondary);">✔</span> 
-                            <span><strong>Sovereignty:</strong> Allowing Luxembourg to have a voice in the rules that govern ICT, Space, and Construction.</span>
-                        </li>
-                    </ul>
+
+                <div class="pillar-grid">
+                    <a href="sectors/ict.html" class="pillar-link-card"
+                        style="border-top: 8px solid var(--primary-blue);">
+                        <span style="font-size: 3rem;">💻</span>
+                        <h4>ICT Sector</h4>
+                        <p>Building technical foundations for a secure and trusted digital future.</p>
+                        <ul class="sector-topics">
+                            <li>Quantum Computing Standards</li>
+                            <li>Green ICT & Sustainability</li>
+                            <li>Digital Trust & Security</li>
+                        </ul>
+                        <span class="pillar-cta">Explore ICT Research →</span>
+                    </a>
+
+                    <a href="sectors/aerospace.html" class="pillar-link-card"
+                        style="border-top: 8px solid var(--secondary-blue);">
+                        <span style="font-size: 3rem;">🛰️</span>
+                        <h4>Aerospace Sector</h4>
+                        <p>Driving the reliability and environmental stewardship of space-based technologies.</p>
+                        <ul class="sector-topics">
+                            <li>Satellite Communications</li>
+                            <li>Orbital Sustainability</li>
+                            <li>Space Data Standardization</li>
+                        </ul>
+                        <span class="pillar-cta">Explore Aerospace Research →</span>
+                    </a>
+
+                    <a href="sectors/construction.html" class="pillar-link-card"
+                        style="border-top: 8px solid var(--accent-blue);">
+                        <span style="font-size: 3rem;">🏗️</span>
+                        <h4>Construction Sector</h4>
+                        <p>Standardizing the circular economy and smart technologies in the built environment.</p>
+                        <ul class="sector-topics">
+                            <li>Sustainable Construction</li>
+                            <li>Smart ICT Integration</li>
+                            <li>BIM & Standards Modernization</li>
+                        </ul>
+                        <span class="pillar-cta">Explore Construction Research →</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="umbrella-section" style="margin-bottom: 6rem; padding: 4rem; background: var(--dark); border-radius: 30px; color: white;">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 1rem;">2025-2028 Strategic Focus</h2>
-                <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Sustainability Umbrella</h3>
-                <p style="opacity: 0.9; line-height: 1.8; font-size: 1.1rem;">
-                    In its third phase, the programme aligns three critical pillars—<strong>ICT, Aerospace, and Construction</strong>—under a unified sustainability framework. This approach ensures that technical standards support both the digital transition and the ecological goals of the European Green Deal.
-                </p>
+        <section class="section-padding">
+            <div class="main-container">
+                <h3 style="font-size: 2.2rem; text-align: center; margin-bottom: 3rem;">Programme Governance</h3>
+                <div class="governance-grid">
+                    <div class="gov-card hover-lift" style="border-top: 5px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 2rem;">Scientific Leadership (SnT)</h4>
+                        <div class="profile-item">
+                            <img src="images/greg-200w.png" class="profile-img">
+                            <div>
+                                <h5 style="margin: 0;">Dr. Grégoire Danoy</h5>
+                                <p style="font-size: 0.85rem; color: #64748b;">Principal Investigator</p>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <img src="images/pascal.jpeg" class="profile-img">
+                            <div>
+                                <h5 style="margin: 0;">Prof. Pascal Bouvry</h5>
+                                <p style="font-size: 0.85rem; color: #64748b;">Dean of FSTM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gov-card hover-lift" style="border-top: 5px solid var(--secondary);">
+                        <h4 style="color: var(--secondary); margin-bottom: 2rem;">Institutional Leadership (ILNAS)</h4>
+                        <div class="profile-item">
+                            <img src="images/jm-200h.png" class="profile-img">
+                            <div>
+                                <h5 style="margin: 0;">Mr. Jean-Marie Reiff</h5>
+                                <p style="font-size: 0.85rem; color: #64748b;">Director of ILNAS</p>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <img src="images/jp-200h.png" class="profile-img">
+                            <div>
+                                <h5 style="margin: 0;">Dr. Jean-Philippe Humbert</h5>
+                                <p style="font-size: 0.85rem; color: #64748b;">Deputy Director of ILNAS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="research-team.html" class="read-more-btn"
+                        style="background: var(--dark); color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none; font-weight: 700;">Meet
+                        the Full Research Team →</a>
+                </div>
             </div>
         </section>
 
-        <section class="stats-bar" style="margin-bottom: 6rem;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
-                <div style="padding: 2rem; border-right: 1px solid #eee;">
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">8+ Years</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Continuous Collaboration</p>
-                </div>
-                <div style="padding: 2rem; border-right: 1px solid #eee;">
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">150+</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Scientific Publications</p>
-                </div>
-                <div style="padding: 2rem; border-right: 1px solid #eee;">
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">20+</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Experts & Researchers</p>
-                </div>
-                <div style="padding: 2rem;">
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">Global</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Standardization Influence</p>
+        <section style="padding: 80px 0; background: #f8fafc;">
+            <div class="main-container">
+                <div class="archive-glass-card">
+                    <div style="display: flex; align-items: center; gap: 2rem;">
+                        <div class="archive-icon-box">📂</div>
+                        <div>
+                            <h4 style="margin: 0; color: var(--dark); font-size: 1.5rem; font-weight: 800;">Programme
+                                Archive</h4>
+                            <p style="margin: 5px 0 0; color: #64748b;">Access technical reports and outcomes from the
+                                <strong>2021—2024</strong> phase.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="archive-2021/index.html" class="btn-archive"
+                        style="background: var(--dark); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s;">
+                        View Reports →
+                    </a>
                 </div>
             </div>
         </section>
-
-        <section class="governance-section">
-            <h3 style="font-size: 2.2rem; text-align: center; margin-bottom: 4rem;">Programme Governance</h3>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
-                
-                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--primary);">
-                    <h4 style="margin-bottom: 2rem; color: var(--primary);">Scientific Leadership (SnT)</h4>
-                    <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
-                        <img src="images/greg-200w.png" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        <div>
-                            <h5 style="margin: 0; font-size: 1.1rem;">Dr. Grégoire Danoy</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Principal Investigator</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 2rem; align-items: center;">
-                        <img src="images/pascal.jpeg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        <div>
-                            <h5 style="margin: 0; font-size: 1.1rem;">Prof. Pascal Bouvry</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Dean of the Faculty of Science, Technology and Medicine</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary);">
-                    <h4 style="margin-bottom: 2rem; color: var(--secondary);">Institutional Leadership (ILNAS)</h4>
-                    <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
-                        <img src="images/jm-200h.png" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        <div>
-                            <h5 style="margin: 0; font-size: 1.1rem;">Mr. Jean-Marie Reiff</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Director of ILNAS</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 2rem; align-items: center;">
-                        <img src="images/jp-200h.png" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        <div>
-                            <h5 style="margin: 0; font-size: 1.1rem;">Dr. Jean-Philippe Humbert</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Deputy Director of ILNAS</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="research-team.html" class="read-more" style="background: var(--dark); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none;">Meet the Full Research Team →</a>
-            </div>
-        </section>
-
     </main>
+
     <nav></nav>
     <footer></footer>
     <script src="navbar.js"></script>

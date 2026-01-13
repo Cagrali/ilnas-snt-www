@@ -646,3 +646,195 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- Shared Layout Classes --- */
+.section-padding {
+    padding: 80px 0;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* --- Strategic Focus & Pillars --- */
+/* --- Strategic Focus Section --- */
+.strategic-focus-wrapper {
+    padding: 100px 0;
+    background-color: #f8fafc; /* Subtle off-white to define the area */
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.focus-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.focus-header h2 {
+    color: var(--secondary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.focus-header h3 {
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+}
+
+/* The Smaller White Card */
+.sustainability-card {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 3rem;
+    background: #ffffff; /* White card on gray background */
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.sustainability-card p {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+/* Pillar Grid */
+/* --- Sector Pillars --- */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.pillar-link-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 28px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-link-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.pillar-link-card h4 {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.6rem;
+    color: var(--dark-bg);
+    font-weight: 800;
+}
+
+/* Specific Sector Sub-topics */
+.sector-topics {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.5rem;
+}
+
+.sector-topics li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.sector-topics li::before {
+    content: "→";
+    color: var(--secondary-blue);
+    font-weight: 800;
+}
+
+/* --- Governance Section --- */
+.governance-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
+}
+
+.gov-card {
+    background: white; 
+    padding: 2.5rem; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.profile-item {
+    display: flex; 
+    gap: 1.2rem; 
+    align-items: center; 
+    margin-bottom: 1.5rem;
+}
+
+.profile-img {
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+/* --- Glassmorphism Archive --- */
+.archive-glass-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 3.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.archive-icon-box {
+    /*background: hsla(217, 89%, 74%, 0.544); */
+    color: white; 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 15px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 2rem;
+}
+
+/* --- Umbrella Section Specifics --- */
+.umbrella-description-box {
+    max-width: 700px;              /* Makes the box narrower */
+    margin: 2rem auto 0;           /* Centers the box and adds space above */
+    padding: 2.5rem;               /* Inner spacing */
+    background: rgba(255, 255, 255, 0.05); /* Subtle glass effect on dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;           /* Large rounded corners */
+    line-height: 1.8;
+    font-size: 1.1rem;
+    backdrop-filter: blur(5px);    /* Adds a modern frosted glass touch */
+}
+
+/* Ensure the text stays white and legible inside the box */
+.umbrella-description-box p {
+    margin: 0;
+    opacity: 1;
+    color: #f8fafc;
+}
